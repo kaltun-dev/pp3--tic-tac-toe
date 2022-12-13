@@ -1,31 +1,113 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# tic tac toe game
 
-Welcome USER_NAME,
+<img src="assets/images/responsive.png"/>
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+The deployed website can be viewed here. [Tic Tac Toe](link).
 
-## Reminders
+# Table of contents
+- [UX ](#UX)
+- [Technologies](#Technologies)
+- [Existing features](#Existing-Features)
+- [Testing](#Testing)
+- [Bugs and solutions](#Project-Bugs-and-Solutions)
+- [deployment](#Deployment)
+- [credits](#Credits)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## UX
+ ### User Stories
+ + As a user, I want to…
 
-## Creating the Heroku app
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+ ### 1. Strategy 
+ * Project Purpose
 
-1. `heroku/python`
-2. `heroku/nodejs`
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+ ### 2. Scope
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+ ### 3. Structure
+ 
 
-## Constraints
+ ### 4. Skeleton
+ 
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+ ### Large screen
+ * [Home page] and [game Area]
+ <img src="assets/images/wireframe1.png"/>
+ <img src="assets/images/wireframe3.png"/>
 
------
-Happy coding!
+ ### Small screen
+ * [Home page]) and [game area]
+ <img src="assets/images/wireframe2.png"/>
+ <img src="assets/images/wireframe4.png"/>
+
+
+ ### 5. Surface
+
+
+
+## Technologies
+
+ The technologies used in this project
+ * python
+ * heroku
+ * GitHub
+
+## Existing Features 
+
+  ### Main home page consisting of four main sections.
+
+  
+
+## Testing
+
+ ### Automated tests
+
+  
+
+ ### Manual Testing
+
+   + Desktop
+
+ 
+   + Mobile
+ 
+ 
+
+   +  chrome dev tools lighthouse
+
+ 
+
+
+
+## Future Features
+
+
+## Project Bugs and Solutions:
+ 
+
+## Deployment
+
+ 
+## Credits 
+
+ ### Content
+
+ 
+
+
+ ### Media
+
+ 
+ ### Work based in other code
+
+ 
+ ### Acknowledgements
+
+ -	To the Code Institute for the course material, lectures and their grounded guidlines for the project.  
+
+ -	To the Slack community for being so helpful, informative and inspiring
+
+ - To [W3schools](https://www.w3schools.com/) and [Stack overflow ](https://stackoverflow.com/) for general reference regarding sytax, tags, elements and everything in between.
+ - To my mentor Brian Bohare for supporting me, and encouraging me not to give up when everyhing got too hectic and overloaded with pressure at home and with studies. 
+
