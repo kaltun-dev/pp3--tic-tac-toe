@@ -5,7 +5,6 @@
 The deployed website can be viewed here. [Tic Tac Toe](link).
 
 # Table of contents
-- [UX ](#UX)
 - [Technologies](#Technologies)
 - [Existing features](#Existing-Features)
 - [Testing](#Testing)
@@ -85,6 +84,8 @@ The deployed website can be viewed here. [Tic Tac Toe](link).
 
 ## Project Bugs and Solutions:
  
+*  terminal wasnt working when used the command line.
+* tried to display/print game board with a for loop. 
 
 ## Deployment
 

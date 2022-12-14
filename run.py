@@ -21,6 +21,7 @@ def printBoard():
 printBoard()
 
 # take player input
+
 # check for win or tie
 # switch player
 # check for win or tie again
