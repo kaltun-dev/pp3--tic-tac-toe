@@ -1,4 +1,4 @@
-
+import random
 # set game
 board = [ "-", "-", "-",
          "-", "-", "-",
@@ -11,16 +11,16 @@ playerOScore = 0
 playerXScore = 0
 
 # introduction to game
-"""name = input("Enter your name: ")
+name = input("Enter your name: ")
 print( 'WELLCOME to tic tac toe ' + name + ' place X on board') 
 print( 'To win, match 3 slots vertically horizentally or diagnally. ')
-"""
+
 # print game board
 def printBoard():
      print(board[0] + " | " + board[1] + " | " + board[2])
-     print("____________")
+     print("__________")
      print(board[3] + " | " + board[4] + " | " + board[5])
-     print("____________")
+     print("__________")
      print(board[6] + " | " + board[7] + " | " + board[8])
 
 
@@ -33,7 +33,7 @@ def playerInput(board):
         print("Oops player is already at that spot.")
 
 
-# check for win or tie
+# check for win or on diffret positions
 def checkHorizontleRow(board):
     global winner
     if board[0] == board[1] == board[2] and board[0] != "-":
@@ -73,29 +73,54 @@ def checkDiagnalRow(board):
 def checkTie(board):
      global gameRunning
      if "-" not in board:
-          printBoard(board)
-          print("it is a tie ")
-          gameRunning = false
+          printBoard()
+          print('Game over. It is a tie.')
+          gameRunning = False
 
 # switch player
 def switchPlayer():
      global currentPlayer
      if currentPlayer == "x":
-          currentPlayer = "o":
+          currentPlayer = "o"
      else: 
-          currentPlayer = "x":
+          currentPlayer = "x"
 
 # check for win
 def checkwinner():
      if checkHorizontleRow(board) or checkVerticalRow(board) or checkDiagnalRow(board):
           print(f"the winner is {winner}")
+          printBoard()
+          askUser = input("Thank you for playing !!, would you like to play again?, press y for yes, n for no. ")
+          if askUser == "y": 
+           gameRunning = False
 
-# swich the player 
-# check for win or tie again.
+
+
+
 # startgame function 
 # clear game function
+
+# play against computer
+
+def computer(board):
+     while currentPlayer == "o":
+          position = random.randint(0, 8)
+          if board[position] == "-":
+               board[position] = "o"
+               switchPlayer()
+
+def playAgain():
+
 
 while gameRunning:
      printBoard()
      playerInput(board)
+     checkwinner()
+     checkTie(board)
+     switchPlayer()
+     computer(board)
+     checkwinner()
+     checkTie(board)
+     # playAgain()
+
 
