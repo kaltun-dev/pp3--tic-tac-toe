@@ -34,42 +34,62 @@ def playerInput(board):
 
 
 # check for win or tie
-def checkHorizentalRow(board):
-     global winner 
-     if board[0] == board[1] == board[2] and board[1] != "-":
-          winner = board[0]
-          return True
-     elif board[3] == board[4] == board[5] and board[3] != "-":
-          winner = board[3]
-          return True
-     elif board[6] == board[7] == board[8] and board[6] != "-":
-          winner = board[6]
-          return True
+def checkHorizontleRow(board):
+    global winner
+    if board[0] == board[1] == board[2] and board[0] != "-":
+        winner = board[0]
+        return True
+    elif board[3] == board[4] == board[5] and board[3] != "-":
+        winner = board[3]
+        return True
+    elif board[6] == board[7] == board[8] and board[6] != "-":
+        winner = board[6]
+        return True
 
 def checkVerticalRow(board):
-     if board[0] == board[3] == board[6] and board[0] != "-":
-          winner = board[0]
-          return True
-     elif board[1] == board[4] == board[7] and board[1] != "-":
-          winner = board[1]
-          return True
-     elif board[2] == board[5] == board[8] and board[2] != "-":
-          winner = board[2]
-          return True
+    global winner
+    if board[0] == board[3] == board[6] and board[0] != "-":
+        winner = board[0]
+        return True
+    elif board[1] == board[4] == board[7] and board[1] != "-":
+        winner = board[1]
+        return True
+    elif board[2] == board[5] == board[8] and board[2] != "-":
+        winner = board[3]
+        return True
+
 
 def checkDiagnalRow(board):
-     if board[0] == board[4] == board[8] and board[0] != "-":
-          winner = board[0]
-          return True
-     elif board[2] == board[4] == board[6] and board[2] != "-":
-          winner = board[2]
-          return True
+    global winner
+    if board[0] == board[4] == board[8] and board[0] != "-":
+        winner = board[0]
+        return True
+    elif board[2] == board[4] == board[6] and board[4] != "-":
+        winner = board[2]
+        return True
 
 # check for win or tie
 
+def checkTie(board):
+     global gameRunning
+     if "-" not in board:
+          printBoard(board)
+          print("it is a tie ")
+          gameRunning = false
 
 # switch player
-# check for win or tie again
+def switchPlayer():
+     global currentPlayer
+     if currentPlayer == "x":
+          currentPlayer = "o":
+     else: 
+          currentPlayer = "x":
+
+# check for win
+def checkwinner():
+     if checkHorizontleRow(board) or checkVerticalRow(board) or checkDiagnalRow(board):
+          print(f"the winner is {winner}")
+
 # swich the player 
 # check for win or tie again.
 # startgame function 
