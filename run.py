@@ -1,5 +1,6 @@
 import random
 # set game
+
 board = [ "-", "-", "-",
          "-", "-", "-",
          "-", "-", "-"]
@@ -7,8 +8,7 @@ board = [ "-", "-", "-",
 currentPlayer = "x"
 winner = None
 gameRunning = True
-playerOScore = 0
-playerXScore = 0
+
 
 # introduction to game
 name = input("Enter your name: ")
@@ -46,6 +46,7 @@ def checkHorizontleRow(board):
         winner = board[6]
         return True
 
+
 def checkVerticalRow(board):
     global winner
     if board[0] == board[3] == board[6] and board[0] != "-":
@@ -68,40 +69,39 @@ def checkDiagnalRow(board):
         winner = board[2]
         return True
 
-# check for win or tie
 
+# check for tie
 def checkTie(board):
-     global gameRunning
-     if "-" not in board:
-          printBoard()
-          print('Game over. It is a tie.')
-          gameRunning = False
+    global gameRunning
+    if "-" not in board:
+        printBoard()
+        print('Game over. It is a tie.')
+        gameRunning = False
+
 
 # switch player
 def switchPlayer():
-     global currentPlayer
-     if currentPlayer == "x":
-          currentPlayer = "o"
-     else: 
-          currentPlayer = "x"
+    global currentPlayer
+    if currentPlayer == "x":
+        currentPlayer = "o"
+    else:
+        currentPlayer = "x"
+
 
 # check for win
 def checkwinner():
-     if checkHorizontleRow(board) or checkVerticalRow(board) or checkDiagnalRow(board):
-          print(f"the winner is {winner}")
-          printBoard()
-          askUser = input("Thank you for playing !!, would you like to play again?, press y for yes, n for no. ")
-          if askUser == "y": 
-           gameRunning = False
+    if checkHorizontleRow(board) or checkVerticalRow(board) or checkDiagnalRow(board):
+        print(f"the winner is {winner}")
+        printBoard()
+        askUser = input("Thank you for playing !!, would you like to play again?, press y for yes, n for no. ")
+        if askUser == "y":
+            playerInput.clear()
+        #gameRunning = False
 
 
-
-
-# startgame function 
-# clear game function
-
+              
+          
 # play against computer
-
 def computer(board):
      while currentPlayer == "o":
           position = random.randint(0, 8)
@@ -109,18 +109,37 @@ def computer(board):
                board[position] = "o"
                switchPlayer()
 
+"""
 def playAgain():
-
+          askUser = input("Thank you for playing !!, would you like to play again?, press y for yes, n for no. ")
+          if askUser == "y":
+               board = [ "-", "-", "-",
+                         "-", "-", "-",
+                         "-", "-", "-"]
+               currentPlayer = "x"
+               winner = None
+               gameRunning = True 
+               printBoard()
+               playerInput(board)
+               checkwinner()
+               checkTie(board)
+               switchPlayer()
+               computer(board)
+               checkwinner()
+               checkTie(board)
+          else: 
+               askUser == "n"
+               input("Thank you for playing. goodbye. ")
+"""
 
 while gameRunning:
-     printBoard()
-     playerInput(board)
-     checkwinner()
-     checkTie(board)
-     switchPlayer()
-     computer(board)
-     checkwinner()
-     checkTie(board)
-     # playAgain()
+    printBoard()
+    playerInput(board)
+    checkwinner()
+    checkTie(board)
+    switchPlayer()
+    computer(board)
+    checkwinner()
+    checkTie(board)
 
 
