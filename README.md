@@ -86,6 +86,9 @@ The deployed website can be viewed here. [Tic Tac Toe](link).
  
 *  terminal wasnt working when used the command line.
 * tried to display/print game board with a for loop. 
+* number input wassnt catching invalid entries. 
+* tried using player input outside varible. but coudnt
+* when game checked for tie or winner, game wasnt ending. 
 
 ## Deployment
 

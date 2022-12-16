@@ -1,6 +1,5 @@
 import random
 # set game
-
 board = [ "-", "-", "-",
          "-", "-", "-",
          "-", "-", "-"]
@@ -9,11 +8,16 @@ currentPlayer = "x"
 winner = None
 gameRunning = True
 
-
 # introduction to game
 name = input("Enter your name: ")
+if not name:
+    print("Name cannot be empty! Try again")
+    gameRunning = False
+    name = input("Enter your name: ")
+
 print( 'WELLCOME to tic tac toe ' + name + ' place X on board') 
 print( 'To win, match 3 slots vertically horizentally or diagnally. ')
+print("-----------------------------------------------")
 
 # print game board
 def printBoard():
@@ -27,10 +31,16 @@ def printBoard():
 # take player input
 def playerInput(board):
     inp = int(input("Select a spot 1-9: "))
-    if board[inp-1] == "-":
-        board[inp-1] = currentPlayer
+    if not type(inp) is int:
+        raise TypeError("Only integers are allowed")
+    elif inp < 0 or inp > 9:
+        raise Exception("Sorry, no numbers below zero or above 9")
+        inp = int(input("Select a spot 1-9: "))
+    #elif inp != int:
+        #print("Oops player is already at that spot.")
     else:
-        print("Oops player is already at that spot.")
+         board[inp-1] == "-"
+         board[inp-1] = currentPlayer
 
 
 # check for win or on diffret positions
