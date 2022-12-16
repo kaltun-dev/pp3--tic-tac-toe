@@ -6,6 +6,7 @@ board = ["-", "-", "-",
 
 currentPlayer = "x"
 winner = None
+gameRunning = True
 
 def getUsername():
     """Get username and validate."""
@@ -85,7 +86,7 @@ def checkTie(board):
         printBoard()
         print('Game over. It is a tie.')
         print("Thank you for playing GoodBye.")
-        gameRunning == 'False'
+        gameRunning == False
 
 
 # switch player
@@ -100,15 +101,16 @@ def switchPlayer():
 # check for win
 def checkwinner():
     if checkHorizontleRow(board) or checkVerticalRow(board) or checkDiagnalRow(board):
+        global gameRunning
         print(f"the winner is {winner}")
         printBoard()
         askUser = input("Thank you for playing !!, would you like to play again?, press y for yes, n for no. ")
         if askUser == "y":
+            #gameRunning = True
             main()
         elif askUser == "n":
-            global gameRunning
             print("Thank you for playing , Goodbye.")
-            return 'False'
+            gameRunning = False
 
 # play against computer
 def computer(board):
@@ -120,17 +122,19 @@ def computer(board):
 
 
 def main():
+    global board
+    board = ["-", "-", "-",
+            "-", "-", "-",
+            "-", "-", "-"]
     getUsername()
     printBoard()
-    gameRunning = True
-    while gameRunning == 'True':
+    while gameRunning == True:
         playerInput()
         switchPlayer()
         computer(board)
-        gameRunning = checkwinner()
-        gameRunning = checkTie(board)
         printBoard()
-        print("game still running" + gameRunning)
+        checkwinner()
+        checkTie(board)
 
 
 main()
