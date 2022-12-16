@@ -1,13 +1,25 @@
 import random
 # set game
-board = [ "-", "-", "-",
-         "-", "-", "-",
-         "-", "-", "-"]
+board = ["-", "-", "-",
+            "-", "-", "-",
+            "-", "-", "-"]
 
 currentPlayer = "x"
 winner = None
-gameRunning = True
+#gameRunning = True
 
+def getUsername():
+    """Get username and validate."""
+    while True:
+        name = input("Enter your name: ")
+        if not name:
+            print("Name cannot be empty! Try again")
+        else:
+            print( 'WELLCOME to tic tac toe ' + name + ' place X on board')
+            print( 'To win, match 3 slots vertically horizentally or diagnally. ')
+            print("-----------------------------------------------")
+            break
+"""
 # introduction to game
 name = input("Enter your name: ")
 if not name:
@@ -18,14 +30,15 @@ if not name:
 print( 'WELLCOME to tic tac toe ' + name + ' place X on board') 
 print( 'To win, match 3 slots vertically horizentally or diagnally. ')
 print("-----------------------------------------------")
+"""
 
 # print game board
 def printBoard():
-     print(board[0] + " | " + board[1] + " | " + board[2])
-     print("__________")
-     print(board[3] + " | " + board[4] + " | " + board[5])
-     print("__________")
-     print(board[6] + " | " + board[7] + " | " + board[8])
+    print(board[0] + " | " + board[1] + " | " + board[2])
+    print("__________")
+    print(board[3] + " | " + board[4] + " | " + board[5])
+    print("__________")
+    print(board[6] + " | " + board[7] + " | " + board[8])
 
 
 # take player input
@@ -36,11 +49,11 @@ def playerInput(board):
     elif inp < 0 or inp > 9:
         raise Exception("Sorry, no numbers below zero or above 9")
         inp = int(input("Select a spot 1-9: "))
-    #elif inp != int:
+    # elif inp != int:
         #print("Oops player is already at that spot.")
     else:
-         board[inp-1] == "-"
-         board[inp-1] = currentPlayer
+        board[inp-1] == "-"
+        board[inp-1] = currentPlayer
 
 
 # check for win or on diffret positions
@@ -141,7 +154,7 @@ def playAgain():
                askUser == "n"
                input("Thank you for playing. goodbye. ")
 """
-
+"""
 while gameRunning:
     printBoard()
     playerInput(board)
@@ -151,5 +164,5 @@ while gameRunning:
     computer(board)
     checkwinner()
     checkTie(board)
-
+"""
 
