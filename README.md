@@ -89,6 +89,8 @@ The deployed website can be viewed here. [Tic Tac Toe](link).
 * number input wassnt catching invalid entries. 
 * tried using player input outside varible. but coudnt
 * when game checked for tie or winner, game wasnt ending. 
+* found solution from stackoverflow to redefine the varible using global.
+* userinput needs fursther verifications for non integer.
 
 ## Deployment
 

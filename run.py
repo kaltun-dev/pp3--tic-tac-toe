@@ -29,18 +29,22 @@ def printBoard():
     print(board[6] + " | " + board[7] + " | " + board[8])
 
 def playerInput():
-    """Get player choice."""
+        #Get player choice.
     while True:
-        inp = int(input("Select a spot 1-9: "))
-        if inp < 0 or inp > 9:
-            print('Not a valid choice, please enter another value between 1 and 9.')
-        elif board[inp-1] == int:
-            print("Sorry that position is taken")
+        try:
+            inp = int(input("Select a spot 1-9: "))
+        except ValueError:
+            print("wrong input, Please try again.")
+            continue
+        if inp <= 0 or inp >= 10:
+            print('Not a valid choice, please enter a number between 1 and 9.')
+            continue
+        elif board[inp-1] == "o" or board[inp-1] == "x":
+            print("opps, spot is occupied. Choose another spot.")
         else:
             board[inp-1] == "-"
             board[inp-1] = currentPlayer
             break
-
 
 # check for win or on different positions
 def checkHorizontleRow(board):
@@ -102,8 +106,10 @@ def switchPlayer():
 def checkwinner():
     if checkHorizontleRow(board) or checkVerticalRow(board) or checkDiagnalRow(board):
         global gameRunning
-        print(f"the winner is {winner}")
+        #print(f"the winner is {winner}")
+        print("-----------------------------------------------")
         printBoard()
+        print(f"the winner is {winner}")
         askUser = input("Thank you for playing !!, would you like to play again?, press y for yes, n for no. ")
         if askUser == "y":
             #gameRunning = True
