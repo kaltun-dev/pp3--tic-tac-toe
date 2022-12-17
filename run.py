@@ -7,17 +7,37 @@ board = ["-", "-", "-",
 currentPlayer = "x"
 winner = None
 gameRunning = True
+name = None
+xScore = 0
+oScore = 0
+
+def intro():
+    print()
+    print("WELCOME TO TIC TAC TOE")
+    print()
+    print("------------------------------------------")
+    print()
+    print("GAME RULES")
+    print( '1: You are player x and the computer is player o. ')
+    print( '2: First horizental row represents spot 1, 2 and 3')
+    print( '3: Second horizental row represents spot 4, 5 and 6')
+    print( '4: Third horizental row represents spot 7, 8 and 9')
+    print( '5: choose the number which matches your desired spot')
+    print( '6: To win game, match any 3 spots vertically, horizentally or diagnally. ')
+    print("-----------------------------------------------")
+    print()
 
 def getUsername():
+    global name
     """Get username and validate."""
     while True:
-        name = input("Enter your name: ")
+        name = input("To continue Enter your name please : ")
+        print()
         if not name:
             print("Name cannot be empty! Try again")
         else:
-            print( 'WELLCOME to tic tac toe ' + name + ' place X on board')
-            print( 'To win, match 3 slots vertically horizentally or diagnally. ')
-            print("-----------------------------------------------")
+            print( 'WELLCOME to tic tac toe ' + name + ' Here is the Game Board. Choose a spot in the board.')
+            print()
             break
 
 # print game board
@@ -32,7 +52,7 @@ def playerInput():
         #Get player choice.
     while True:
         try:
-            inp = int(input("Select a spot 1-9: "))
+            inp = int(input("Its your turn, Select a spot from 1-9: "))
         except ValueError:
             print("wrong input, Please try again.")
             continue
@@ -41,10 +61,12 @@ def playerInput():
             continue
         elif board[inp-1] == "o" or board[inp-1] == "x":
             print("opps, spot is occupied. Choose another spot.")
+            continue
         else:
             board[inp-1] == "-"
             board[inp-1] = currentPlayer
             break
+
 
 # check for win or on different positions
 def checkHorizontleRow(board):
@@ -84,13 +106,15 @@ def checkDiagnalRow(board):
 
 
 # check for tie
-def checkTie(board):
+
+def checkTie():
     global gameRunning
+    global board
     if "-" not in board:
-        printBoard()
         print('Game over. It is a tie.')
-        print("Thank you for playing GoodBye.")
-        gameRunning == False
+        gameRunning = False
+    else:
+        gameRunning = True
 
 
 # switch player
@@ -105,18 +129,43 @@ def switchPlayer():
 # check for win
 def checkwinner():
     if checkHorizontleRow(board) or checkVerticalRow(board) or checkDiagnalRow(board):
-        global gameRunning
+        global name
+        global xScore
+        global oScore
+        global currentPlayer
         #print(f"the winner is {winner}")
         print("-----------------------------------------------")
-        printBoard()
-        print(f"the winner is {winner}")
-        askUser = input("Thank you for playing !!, would you like to play again?, press y for yes, n for no. ")
-        if askUser == "y":
-            #gameRunning = True
+        print()
+        print('GAMEOVER. ')
+        currentPlayer = winner
+        if winner == "x":
+            xScore += 1
+            print('The winner is ' + name + ' ')
+            playAgainOrNot()
+        elif winner == "o":
+            oScore += 1
+            print("The winner is player O")
+            playAgainOrNot()
+        elif winner != "x" and winner != "o":
+            print('Game over. It is a tie.')
+
+
+def playAgainOrNot():
+    global gameRunning
+    while True:
+        try:
+           askUser = int(input("Thank you for playing !!, would you like to play again?, press 1 for yes. "))
+        except ValueError:
+            print("wrong input, Please try again.")
+            continue
+        if askUser != 1:
+            print("wrong input, Please try again.")
+            continue
+        else:
             main()
-        elif askUser == "n":
-            print("Thank you for playing , Goodbye.")
-            gameRunning = False
+            break
+
+
 
 # play against computer
 def computer(board):
@@ -126,12 +175,18 @@ def computer(board):
             board[position] = "o"
             switchPlayer()
 
+def quitAll():
+    global gameRunning
+    print()
+    print("THANK YOU FOR PLAYING. GOODBYE.")       
+    gameRunning = False
 
 def main():
     global board
     board = ["-", "-", "-",
             "-", "-", "-",
             "-", "-", "-"]
+    intro()
     getUsername()
     printBoard()
     while gameRunning == True:
@@ -140,7 +195,7 @@ def main():
         computer(board)
         printBoard()
         checkwinner()
-        checkTie(board)
+        checkTie()
 
 
 main()
