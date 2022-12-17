@@ -25,7 +25,7 @@ def intro():
     print('4: Third horizental row represents spot 7, 8 and 9')
     print('5: choose the number which matches your desired spot')
     print('6: To win game, match any 3 spots')
-    print('vertically, horizentally or diagnally.'/n)
+    print('vertically, horizentally or diagnally.')
     print("-----------------------------------------------")
     print()
 
@@ -39,7 +39,8 @@ def getUsername():
         if not name:
             print("Name cannot be empty! Try again")
         else:
-            print('WELLCOME to tic tac toe ' + name + 'Choose spot in the board.'/n)
+            print('WELLCOME to tic tac toe ' + name + '')
+            print('Choose spot in the board')
             print()
             break
 
@@ -55,7 +56,6 @@ def printBoard():
 
 
 def playerInput():
-        """Get player choice."""
     while True:
         try:
             inp = int(input("Its your turn, Select a spot from 1-9: "))
@@ -112,16 +112,11 @@ def checkDiagnalRow(board):
 
 
 # check for tie
-
 def checkTie():
-    global gameRunning
     global board
     if "-" not in board:
         print('Game over. It is a tie.')
-        gameRunning = False
-        quitAll()
-    else:
-        gameRunning = True
+        return
 
 
 # switch player
@@ -140,7 +135,6 @@ def checkwinner():
         global xScore
         global oScore
         global currentPlayer
-        #print(f"the winner is {winner}")
         print("-----------------------------------------------")
         print()
         print('GAMEOVER. ')
@@ -153,8 +147,7 @@ def checkwinner():
             oScore += 1
             print("The winner is player O")
             playAgainOrNot()
-        elif winner != "x" and winner != "o":
-            print('Game over. It is a tie.')
+    return
 
 
 def playAgainOrNot():
@@ -173,7 +166,6 @@ def playAgainOrNot():
             break
 
 
-
 # play against computer
 def computer(board):
     while currentPlayer == "o":
@@ -182,17 +174,11 @@ def computer(board):
             board[position] = "o"
             switchPlayer()
 
-def quitAll():
-    global gameRunning
-    print()
-    print("THANK YOU FOR PLAYING. GOODBYE.")       
-    gameRunning = False
-
 def main():
     global board
     board = ["-", "-", "-",
-            "-", "-", "-",
-            "-", "-", "-"]
+             "-", "-", "-",
+             "-", "-", "-"]
     intro()
     getUsername()
     printBoard()
@@ -206,3 +192,13 @@ def main():
 
 
 main()
+
+
+def quitAll():
+    global gameRunning
+    print()
+    print("THANK YOU FOR PLAYING. GOODBYE.")
+    gameRunning = False
+
+
+quitAll()
