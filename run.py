@@ -11,6 +11,7 @@ name = None
 xScore = 0
 oScore = 0
 
+
 def intro():
     print()
     print("WELCOME TO TIC TAC TOE")
@@ -18,14 +19,16 @@ def intro():
     print("------------------------------------------")
     print()
     print("GAME RULES")
-    print( '1: You are player x and the computer is player o. ')
-    print( '2: First horizental row represents spot 1, 2 and 3')
-    print( '3: Second horizental row represents spot 4, 5 and 6')
-    print( '4: Third horizental row represents spot 7, 8 and 9')
-    print( '5: choose the number which matches your desired spot')
-    print( '6: To win game, match any 3 spots vertically, horizentally or diagnally. ')
+    print('1: You are player x and the computer is player o.')
+    print('2: First horizental row represents spot 1, 2 and 3')
+    print('3: Second horizental row represents spot 4, 5 and 6')
+    print('4: Third horizental row represents spot 7, 8 and 9')
+    print('5: choose the number which matches your desired spot')
+    print('6: To win game, match any 3 spots')
+    print('vertically, horizentally or diagnally.'/n)
     print("-----------------------------------------------")
     print()
+
 
 def getUsername():
     global name
@@ -36,11 +39,13 @@ def getUsername():
         if not name:
             print("Name cannot be empty! Try again")
         else:
-            print( 'WELLCOME to tic tac toe ' + name + ' Here is the Game Board. Choose a spot in the board.')
+            print('WELLCOME to tic tac toe ' + name + 'Choose spot in the board.'/n)
             print()
             break
 
 # print game board
+
+
 def printBoard():
     print(board[0] + " | " + board[1] + " | " + board[2])
     print("__________")
@@ -48,8 +53,9 @@ def printBoard():
     print("__________")
     print(board[6] + " | " + board[7] + " | " + board[8])
 
+
 def playerInput():
-        #Get player choice.
+        """Get player choice."""
     while True:
         try:
             inp = int(input("Its your turn, Select a spot from 1-9: "))
@@ -113,6 +119,7 @@ def checkTie():
     if "-" not in board:
         print('Game over. It is a tie.')
         gameRunning = False
+        quitAll()
     else:
         gameRunning = True
 
