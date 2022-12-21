@@ -68,8 +68,7 @@ def playerInput():
         elif board[inp-1] == "o" or board[inp-1] == "x":
             print("opps, spot is occupied. Choose another spot.")
             continue
-        else:
-            board[inp-1] == "-"
+        elif board[inp-1] == "-":
             board[inp-1] = currentPlayer
             break
         return
@@ -118,7 +117,6 @@ def checkTie():
     global board
     if "-" not in board:
         print('Game over. It is a tie.')
-        print("this is a print to check tie")
         playAgainOrNot()
     return
     
@@ -130,6 +128,7 @@ def switchPlayer():
         currentPlayer = "o"
     else:
         currentPlayer = "x"
+    return
 
 
 # check for win
@@ -146,11 +145,10 @@ def checkwinner():
         if winner == "x":
             print('The winner is ' + name + ' ')
             playAgainOrNot()
-        else:
+        elif winner == "o":
             print("The winner is player O")
             playAgainOrNot()
-    
-
+        
 
 def playAgainOrNot():
     global gameRunning
@@ -168,14 +166,17 @@ def playAgainOrNot():
         else:
             quitAll()
             break
-
+    
 
 # play against computer
 def computer(board):
+    global currentPlayer
     while currentPlayer == "o":
         position = random.randint(0, 8)
         if board[position] == "-":
             board[position] = "o"
+            checkwinner()
+            checkTie()
             switchPlayer()
 
 
@@ -190,6 +191,7 @@ def main():
     board = ["-", "-", "-",
              "-", "-", "-",
              "-", "-", "-"]
+    currentPlayer = "x"
     intro()
     getUsername()
     printBoard()
