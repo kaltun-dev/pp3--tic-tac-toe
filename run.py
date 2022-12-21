@@ -11,7 +11,7 @@ name = None
 xScore = 0
 oScore = 0
 
-
+#introduction to game
 def intro():
     print()
     print("WELCOME TO TIC TAC TOE")
@@ -29,7 +29,7 @@ def intro():
     print("-----------------------------------------------")
     print()
 
-
+#gets user's name and saves it
 def getUsername():
     global name
     """Get username and validate."""
@@ -44,9 +44,8 @@ def getUsername():
             print()
             break
 
-# print game board
 
-
+#prints board to terminal.
 def printBoard():
     print(board[0] + " | " + board[1] + " | " + board[2])
     print("__________")
@@ -55,6 +54,7 @@ def printBoard():
     print(board[6] + " | " + board[7] + " | " + board[8])
 
 
+#gets player input and prints on board
 def playerInput():
     while True:
         try:
@@ -72,9 +72,9 @@ def playerInput():
             board[inp-1] == "-"
             board[inp-1] = currentPlayer
             break
+        return
 
-
-# check for win or on different positions
+# check for win or on different horizental positions
 def checkHorizontleRow(board):
     global winner
     if board[0] == board[1] == board[2] and board[0] != "-":
@@ -88,6 +88,7 @@ def checkHorizontleRow(board):
         return True
 
 
+#check for win on diffrent vertical positions
 def checkVerticalRow(board):
     global winner
     if board[0] == board[3] == board[6] and board[0] != "-":
@@ -101,6 +102,7 @@ def checkVerticalRow(board):
         return True
 
 
+#check for win or the 2 diagnal postions
 def checkDiagnalRow(board):
     global winner
     if board[0] == board[4] == board[8] and board[0] != "-":
@@ -111,13 +113,15 @@ def checkDiagnalRow(board):
         return True
 
 
-# check for tie
+# check for tie between 2 players
 def checkTie():
     global board
     if "-" not in board:
         print('Game over. It is a tie.')
-        return
-
+        print("this is a print to check tie")
+        playAgainOrNot()
+    return
+    
 
 # switch player
 def switchPlayer():
@@ -132,37 +136,37 @@ def switchPlayer():
 def checkwinner():
     if checkHorizontleRow(board) or checkVerticalRow(board) or checkDiagnalRow(board):
         global name
-        global xScore
-        global oScore
         global currentPlayer
         print("-----------------------------------------------")
+        print()
+        printBoard()
         print()
         print('GAMEOVER. ')
         currentPlayer = winner
         if winner == "x":
-            xScore += 1
             print('The winner is ' + name + ' ')
             playAgainOrNot()
-        elif winner == "o":
-            oScore += 1
+        else:
             print("The winner is player O")
             playAgainOrNot()
-    return
+    
 
 
 def playAgainOrNot():
     global gameRunning
     while True:
         try:
-           askUser = int(input("Thank you for playing !!, would you like to play again?, press 1 for yes. "))
+            askUser = int(input("Thank you for playing !!, would you like to play again?, press 1 for yes or 2 for no: "))
         except ValueError:
             print("wrong input, Please try again.")
             continue
-        if askUser != 1:
+        if askUser != 1 and askUser != 2:
             print("wrong input, Please try again.")
             continue
-        else:
+        elif askUser == 1:
             main()
+        else:
+            quitAll()
             break
 
 
@@ -174,6 +178,13 @@ def computer(board):
             board[position] = "o"
             switchPlayer()
 
+
+def quitAll():
+    global gameRunning
+    print()
+    print("THANK YOU FOR PLAYING. GOODBYE.")
+    gameRunning = False
+
 def main():
     global board
     board = ["-", "-", "-",
@@ -184,21 +195,11 @@ def main():
     printBoard()
     while gameRunning == True:
         playerInput()
+        checkwinner()
+        checkTie()
         switchPlayer()
         computer(board)
         printBoard()
-        checkwinner()
-        checkTie()
 
 
 main()
-
-
-def quitAll():
-    global gameRunning
-    print()
-    print("THANK YOU FOR PLAYING. GOODBYE.")
-    gameRunning = False
-
-
-quitAll()
