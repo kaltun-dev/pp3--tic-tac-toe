@@ -11,8 +11,8 @@ name = None
 xScore = 0
 oScore = 0
 
-#introduction to game
-def intro():
+
+def intro():  # introduction to game
     print()
     print("WELCOME TO TIC TAC TOE")
     print()
@@ -29,7 +29,8 @@ def intro():
     print("-----------------------------------------------")
     print()
 
-#gets user's name and saves it
+
+# gets user's name and saves it
 def getUsername():
     global name
     """Get username and validate."""
@@ -45,7 +46,7 @@ def getUsername():
             break
 
 
-#prints board to terminal.
+# prints board to terminal.
 def printBoard():
     print(board[0] + " | " + board[1] + " | " + board[2])
     print("__________")
@@ -54,7 +55,7 @@ def printBoard():
     print(board[6] + " | " + board[7] + " | " + board[8])
 
 
-#gets player input and prints on board
+# gets player input and prints on board
 def playerInput():
     while True:
         try:
@@ -73,8 +74,9 @@ def playerInput():
             break
         return
 
-# check for win or on different horizental positions
-def checkHorizontleRow(board):
+
+# check for win or on 8 diffrent positions in the board.
+def checkWinnerOn8Positions(board):
     global winner
     if board[0] == board[1] == board[2] and board[0] != "-":
         winner = board[0]
@@ -85,12 +87,7 @@ def checkHorizontleRow(board):
     elif board[6] == board[7] == board[8] and board[6] != "-":
         winner = board[6]
         return True
-
-
-#check for win on diffrent vertical positions
-def checkVerticalRow(board):
-    global winner
-    if board[0] == board[3] == board[6] and board[0] != "-":
+    elif board[0] == board[3] == board[6] and board[0] != "-":
         winner = board[0]
         return True
     elif board[1] == board[4] == board[7] and board[1] != "-":
@@ -99,11 +96,6 @@ def checkVerticalRow(board):
     elif board[2] == board[5] == board[8] and board[2] != "-":
         winner = board[3]
         return True
-
-
-#check for win or the 2 diagnal postions
-def checkDiagnalRow(board):
-    global winner
     if board[0] == board[4] == board[8] and board[0] != "-":
         winner = board[0]
         return True
@@ -115,7 +107,8 @@ def checkDiagnalRow(board):
 # check for tie between 2 players
 def checkTie():
     global board
-    if "-" not in board:
+    global winner
+    if "-" not in board and winner == None:
         print('Game over. It is a tie.')
         playAgainOrNot()
     return
@@ -131,9 +124,9 @@ def switchPlayer():
     return
 
 
-# check for win
+# check for win in either player.
 def checkwinner():
-    if checkHorizontleRow(board) or checkVerticalRow(board) or checkDiagnalRow(board):
+    if checkWinnerOn8Positions(board):
         global name
         global currentPlayer
         print("-----------------------------------------------")
@@ -148,13 +141,16 @@ def checkwinner():
         elif winner == "o":
             print("The winner is player O")
             playAgainOrNot()
-        
+        else:
+            return
+    
 
+# option to play again or to stop.
 def playAgainOrNot():
     global gameRunning
     while True:
         try:
-            askUser = int(input("Thank you for playing !!, would you like to play again?, press 1 for yes or 2 for no: "))
+            askUser = int(input("Thank you for playing, would you like to play again? press 1 for yes or 2 for no: "))
         except ValueError:
             print("wrong input, Please try again.")
             continue
@@ -163,10 +159,13 @@ def playAgainOrNot():
             continue
         elif askUser == 1:
             main()
-        else:
-            quitAll()
+        elif askUser == 2:
+            print()
+            print("THANK YOU FOR PLAYING. GOODBYE.")
+            quit()
             break
-    
+        return
+
 
 # play against computer
 def computer(board):
@@ -180,12 +179,7 @@ def computer(board):
             switchPlayer()
 
 
-def quitAll():
-    global gameRunning
-    print()
-    print("THANK YOU FOR PLAYING. GOODBYE.")
-    gameRunning = False
-
+# Starts the game and resets the game.
 def main():
     global board
     board = ["-", "-", "-",
@@ -204,4 +198,5 @@ def main():
         printBoard()
 
 
+# calling for game to start
 main()

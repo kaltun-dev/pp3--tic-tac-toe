@@ -91,7 +91,9 @@ The deployed website can be viewed here. [Tic Tac Toe](link).
 * when game checked for tie or winner, game wasnt ending. 
 * found solution from stackoverflow to redefine the varible using global.
 * userinput needs fursther verifications for non integer.
-* when played, game was not folllowing through logic. like announced if player o won. or anounces if tie and end game. tried several solutions. 
+* when played, game was not folllowing through logic. like announced if player o won. or anounces if tie and end game. tried several solutions. fixed with help from tutors
+* when press 2 to quit game, game was not quiting, tried making a function called quit all that sets gameplaying to false. unfortunaly that didnt help at all. i tried so many solutions and playd arround with code stubburly for hours. In the end i googled and found the solution was so simple all along. a build in function called quit() can be used or another called exit() amongst other solutions. i was gobsmacked but super happy
+
 
 ## Deployment
 
