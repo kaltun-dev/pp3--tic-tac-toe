@@ -112,7 +112,7 @@ def checkTie():
         print('Game over. It is a tie.')
         playAgainOrNot()
     return
-    
+
 
 # switch player
 def switchPlayer():
@@ -143,14 +143,15 @@ def checkwinner():
             playAgainOrNot()
         else:
             return
-    
+
 
 # option to play again or to stop.
 def playAgainOrNot():
     global gameRunning
     while True:
         try:
-            askUser = int(input("Thank you for playing, would you like to play again? press 1 for yes or 2 for no: "))
+            print("Thank you for playing, would you like to play again?")
+            askUser = int(input("press 1 for yes or 2 for no: "))
         except ValueError:
             print("wrong input, Please try again.")
             continue
