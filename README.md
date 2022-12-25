@@ -1,6 +1,8 @@
 # Tic Tac Toe game
+*This is a tic tac toe game created for educational purposes.
+Code Institute portpholio project 3 
 
-<img src="assets/images/responsive.png"/>
+<img src="assets/images/amiresponsive-tictactoe.png"/>
 
 Tic Tac Toe is an age old game that is played around the world. it can be playen on a game board, a paper and pen board, in a sand and rocks board and online in the computer. It is played by two people at a time. One player takes O and another X. The players take turn by turn to mark the space in the 3×3 grid. If the current player marks three of their marks diagonally, horizontally and vertically in a row or a column that player is declared the winner.
 <br>
@@ -41,52 +43,33 @@ The deployed website can be viewed here. [Tic Tac Toe](https://tictactoepp3.hero
 - owner wants users to play the game, have fun and share the game with family and friends
 
  ## Flowchart
- <img src="assets/images/wireframe3.png"/>
-
- ### Large screen
- * [Home page] and [game Area]
- <img src="assets/images/wireframe1.png"/>
- <img src="assets/images/wireframe3.png"/>
-
- ### Small screen
- * [Home page]) and [game area]
- <img src="assets/images/wireframe2.png"/>
- <img src="assets/images/wireframe4.png"/>
-
-
- ### 5. Surface
-
-
-
+ <img src="assets/images/tictactoe-flowchart.jpg"/>
+ 
 ## Technologies
 
- The technologies used in this project
- * python
- * heroku
- * GitHub
+### Programing languages
+* Python
+
+ ### The technologies and tools
+ * Heroku for deploying and hosting. [see here](https://heroku.com/)
+ * GitHub and gitpod for Cl and storage. [see here](https://github.com/)
+ * App.diagrams for creating the flowchart. [see here](https://app.diagrams.net/)
+ * Am i responsive to check responsivity across platforms. [see here](https://amiresponsive.co.uk/).
+ * pep8 linter to check code for errors. [see here](https://pep8ci.herokuapp.com/) 
+
+ ### Libraries
+ * Random was used so that the computer can generate a random number.
 
 ## Existing Features 
 
-  ### Main home page consisting of four main sections.
+
 
   
 
 ## Testing
 
- ### Automated tests
-
-  
-
  ### Manual Testing
 
-   + Desktop
-
- 
-   + Mobile
- 
- 
-
-   +  chrome dev tools lighthouse
 
  
 
