@@ -159,6 +159,7 @@ def playAgainOrNot():
             print("wrong input, Please try again.")
             continue
         elif askUser == 1:
+            currentPlayer = "x"
             main()
         elif askUser == 2:
             print()
