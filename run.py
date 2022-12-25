@@ -35,7 +35,7 @@ def getUsername():
     global name
     """Get username and validate."""
     while True:
-        name = input("To continue Enter your name please : ")
+        name = input("To continue Enter your name please : \n")
         print()
         if not name:
             print("Name cannot be empty! Try again")
@@ -59,7 +59,7 @@ def printBoard():
 def playerInput():
     while True:
         try:
-            inp = int(input("Its your turn, Select a spot from 1-9: "))
+            inp = int(input("Its your turn, Select a spot from 1-9: \n"))
         except ValueError:
             print("wrong input, Please try again.")
             continue
@@ -108,7 +108,7 @@ def checkWinnerOn8Positions(board):
 def checkTie():
     global board
     global winner
-    if "-" not in board and winner == None:
+    if "-" not in board:
         print('Game over. It is a tie.')
         playAgainOrNot()
     return
@@ -151,7 +151,7 @@ def playAgainOrNot():
     while True:
         try:
             print("Thank you for playing, would you like to play again?")
-            askUser = int(input("press 1 for yes or 2 for no: "))
+            askUser = int(input("press 1 for yes or 2 for no: \n"))
         except ValueError:
             print("wrong input, Please try again.")
             continue
