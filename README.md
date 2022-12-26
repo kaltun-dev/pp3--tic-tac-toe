@@ -109,18 +109,32 @@
 
 ## Project Bugs and Solutions:
  
-*  terminal wasnt working when used the command line.
-* tried to display/print game board with a for loop. 
-* number input wassnt catching invalid entries. 
-* tried using player input outside varible. but coudnt
-* when game checked for tie or winner, game wasnt ending. 
-* found solution from stackoverflow to redefine the varible using global.
-* userinput needs fursther verifications for non integer.
-* when played, game was not folllowing through logic. like announced if player o won. or anounces if tie and end game. tried several solutions. fixed with help from tutors
-* when press 2 to quit game, game was not quiting, tried making a function called quit all that sets gameplaying to false. unfortunaly that didnt help at all. i tried so many solutions and playd arround with code stubburly for hours. In the end i googled and found the solution was so simple all along. a build in function called quit() can be used or another called exit() amongst other solutions. i was gobsmacked but super happy
+ 1. Tried to display/print game board with python list and then use a for loop to diplay board. 
+ - solution: unfortunaly the board was printing vertically and not horizantally in a 3 by 3 line. So i decided to use another way.
 
-* check tie wasnt working. fixed it by removing additional winner arguent.
-* persistant error of when player chooses to play gaian, current player becomes "o". when it shoud've been "x". fixxed this persistant error by re defining current player on both main function and play again or not function and setting current player to "x".
+ 2.  Number input wasnt catching invalid entries. 
+ - solution: I had to come up with a way to validate input errors including wrong numbers, strings, keyboard errors and everything else, my mentor pointed me in the right direction. A try and except block was used to correct errors. This video explained very well how to use try and exept block.
+ [see here](https://www.youtube.com/watch?v=u0402sx05yI&t=546s)
+
+ 3.  Tried using player input outside varible. but coudnt.
+ - solution:  found solution from stackoverflow to redefine the varible using global.
+
+ 4.  when played, game was not folllowing through logic. like announced if player o won. or anounces if tie and end game. 
+ - tried several solutions. fixed with help from tutors by trying to re- Arrange the (main) function loop.
+ <img src="assets/images/error1.png"/>
+
+ 5. when press 2 to quit game, game was not quiting, tried making a function called quit all that sets gameplaying to false. unfortunaly that didnt help at all. 
+ - i tried so many solutions and playd arround with code stubburly for hours. In the end i googled and found the solution was so simple all along. a build in function called quit() can be used or another called exit() amongst other solutions. i was gobsmacked but super happy
+ <img src="assets/images/error-input.png"/>
+
+ 6. check tie wasnt working and was ending the game after tie straight away. 
+ - solution: fixed it by removing additional winner argument. re arranging functions and by using the playAgainOrNot function inside the check tie function.
+ <img src="assets/images/error-tie.png"/>
+
+ 7. persistant error of when player chooses to play gaian, current player becomes "o". when it 
+ shoud've been "x". 
+ - solution: fixed this persistant error by re defining current player on both main function and play again or not function and setting current player to "x".
+
 
 
 ## Deployment
@@ -139,21 +153,33 @@
 
 ## Credits 
 
- ### winning arrangments and cheching for winnning
+### printing board and checking for tie
+  * I used this toturial to understand general concept and flow of the game as well as how to print game board, how to check for tie and how to print user input on the board.
+  [see here](https://www.youtube.com/watch?v=dK6gJw4-NCo&t=23s)
+
+ ### winning arrangments and checking for winnning
+ * i used this website to understand the logic of the game and the winning arangements;
+ [see here](https://geekflare.com/tic-tac-toe-python-code/)
+ <img src="assets/images/winning-arrangment.png"/>
+
 
  ### handling input errors
+ * I used this video to understand try and catch statment block:
+ [see here](https://www.youtube.com/watch?v=u0402sx05yI&t=546s)
 
  ### ending the game
- 
- ### printing board and checking for tie
+  * one of the hardest thing that took me days to figure out was finding how to end the game after win or tie. after days of searching I found a simple solution using this blog:
+  [see here](https://iq.opengenus.org/terminate-program-in-python/)
+  <img src="assets/images/quit-game.png"/>
 
  
  ### Acknowledgements
 
  -	To the Code Institute for the course material, lectures and their grounded guidlines for the project.  
-
  -	To the Slack community for being so helpful, informative and inspiring
-
  - To [W3schools](https://www.w3schools.com/) and [Stack overflow ](https://stackoverflow.com/) for general reference regarding sytax, tags, elements and everything in between.
- - To my mentor Brian Bohare for supporting me, and encouraging me not to give up when everyhing got too hectic and overloaded with pressure at home and with studies. 
+ - for GeegFlare for helping with the understanding of the winning game logic.
+ - To opengenus.org for making me understand that there are many ways of ending game.
+ - To code Coach for his simple method of printing game to board.
+ - To my mentor Brian Bohare for supporting me, encouraging me and pointing me to the right direction whenever i was lost.
 
