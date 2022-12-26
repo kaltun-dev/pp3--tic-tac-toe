@@ -1,45 +1,45 @@
 # Tic Tac Toe game
-    *This is a tic tac toe game created for educational purposes.
-    Code Institute portpholio project 3 
+ *This is a tic tac toe game created for educational purposes.
+ Code Institute portpholio project 3 
 
-    <img src="assets/images/amiresponsive-tictactoe.png"/>
+ <img src="assets/images/amiresponsive-tictactoe.png"/>
 
-    Tic Tac Toe is an age old game that is played around the world. it can be playen on a game board, a paper and pen board, in a sand and rocks board and online in the computer. It is played by two people at a time. One player takes O and another X. The players take turn by turn to mark the space in the 3×3 grid. If the current player marks three of their marks diagonally, horizontally and vertically in a row or a column that player is declared the winner.
-    <br>
-    The deployed website can be viewed here. [Tic Tac Toe](https://tictactoepp3.herokuapp.com/).
+ Tic Tac Toe is an age old game that is played around the world. it can be playen on a game board, a paper and pen board, in a sand and rocks board and online in the computer. It is played by two people at a time. One player takes O and another X. The players take turn by turn to mark the space in the 3×3 grid. If the current player marks three of their marks diagonally, horizontally and vertically in a row or a column that player is declared the winner.
+ <br>
+ The deployed website can be viewed here. [Tic Tac Toe](https://tictactoepp3.herokuapp.com/).
 
 # Table of contents
-    - [Tic Tac Toe game](#Tic-Tac-Toe-game)
-    - [Table of contents](#Table-of-contents)
-    - [Project Goals](#Project-Goals)
-    - [Flowchart](#Flowchart)
-    - [Technologies](#Technologies)
-    - [Existing features](#Existing-Features)
-    - [future features](#Future-Features)
-    - [Testing](#Testing)
-    - [Bugs and solutions](#Project-Bugs-and-Solutions)
-    - [deployment](#Deployment)
-    - [credits](#Credits)
+ - [Tic Tac Toe game](#Tic-Tac-Toe-game)
+ - [Table of contents](#Table-of-contents)
+ - [Project Goals](#Project-Goals)
+ - [Flowchart](#Flowchart)
+ - [Technologies](#Technologies)
+ - [Existing features](#Existing-Features)
+ - [future features](#Future-Features)
+ - [Testing](#Testing)
+ - [Bugs and solutions](#Project-Bugs-and-Solutions)
+ - [deployment](#Deployment)
+ - [credits](#Credits)
 
 ## Project Goals
 
  ### User Goals
-    - user wants to Know the rules of the game before they start playing
-    - user wants to Play the traditional classic tic tac toe online at ease
-    - user wants to be able to play reapetdily if they wanted to and to restart the game.
-    - user wants to get notified if they won.
-    - user wants to play a logical game that is error free.
-    - user wants to know the various ways in which they can win the game.
+ - user wants to Know the rules of the game before they start playing
+ - user wants to Play the traditional classic tic tac toe online at ease
+ - user wants to be able to play reapetdily if they wanted to and to restart the game.
+ - user wants to get notified if they won.
+ - user wants to play a logical game that is error free.
+ - user wants to know the various ways in which they can win the game.
 
  ### Owner Goals
-    - owner wants to create a game that is fun and and engaging to play
-    - owner wants a lot of users to visit page
-    - owner wants users to understand the rules of tic tac toe before users play
-    - owner wants users to be aware of the diffrent ways they can win.
-    - owner wants users to know the diffrent spots/marks and the numbers that conside with them
-    - owner wants users to know when they entered an invalid input 
-    - owner wants users to know that game cant continue unless correct input is entered
-    - owner wants users to play the game, have fun and share the game with family and friends
+ - owner wants to create a game that is fun and and engaging to play
+ - owner wants a lot of users to visit page
+ - owner wants users to understand the rules of tic tac toe before users play
+ - owner wants users to be aware of the diffrent ways they can win.
+ - owner wants users to know the diffrent spots/marks and the numbers that conside with them
+ - owner wants users to know when they entered an invalid input 
+ - owner wants users to know that game cant continue unless correct input is entered
+ - owner wants users to play the game, have fun and share the game with family and friends
 
 ## Flowchart
   <img src="assets/images/tictactoe-flowchart.jpg"/>
@@ -81,18 +81,31 @@
   - In the end the player is given two options to end the game or to keep playing. if they choose to play again, the game loads again from the begining. If they however choose to quit then player gets a good by massege. 
   <img src="assets/images/play-again.png"/>
 
-
 ## Testing
 
  ### Manual Testing
+  #### internal linter
+   - Used internal pep8 linter
+   * After hearing that pep8 online website was down, i followed the sterps for installing the internal pep8 linter for CI. At first there were so many errors, mainly to do with commenting spaces, whitespace, line too long, blank lines amongst others.
+  <img src="assets/images/internalpep8-linter.png"/>
 
+  #### Before pep8 linter
+  - used Code Institute pep8 linter
+  * After i got news that Code Institute made a new pep8 linter, i used it to check and correct any further errors. 
+  <img src="assets/images/before-pep8.png"/>
 
- 
-
-
+  #### Final pep8 linter
+  - After corrections
+  * In the end there was one final error on line 194. Which states that comparison to True should be if cond is true. I have tried diffrent ways of correcting this line. And used an if condition but unfortunaly game flow doesnt continue. So for that reason I have decided to leave this error as i believe that a (while loop) is suitable here and keep the game in a loop. Am sure there are ways this can be solved but unfortunatly there is not enough time for it now. It is also worth noting that this error does not effect the game in any negative way. 
+  <img src="assets/images/last-pep8.png"/>
+  
 
 ## Future Features
-
+  * Add colours and style to make game engaging
+  * style game in a way that doesnt need a number input but rather a screen click
+  * give player a choice of being player o or player x
+  * keep score of the game. This was very easy to implement but saw no big benfit as players will most likly refresh the game.   
+  * make the numbers the computer generates randomly be more intuitive and smarter so game can be more engaging.
 
 ## Project Bugs and Solutions:
  
@@ -112,7 +125,18 @@
 
 ## Deployment
 
- 
+ ### Heroku
+ 1. Login to heroku and click new app. Enter app name, try another name if name is taken. Make sure to tick the correct region.
+ <img src="assets/images/heroku1.png"/>
+ 2. After app is created, go to setting from dashboard.
+ <img src="assets/images/heroku2.png"/>
+ 3. In the setting enter convic vars, as i had no json files to hide, i used port and 8000 keys as recomended by code institute. Also add buildbacks python and nodejs in that order.
+ <img src="assets/images/heroku3.png"/>
+ 4. After go to deploy and use github deployment method. log in to git hub via heroku.
+ <img src="assets/images/heroku4.png"/>
+ 5. Choose manual deployment and enable automatic deployment from main branch
+ <img src="assets/images/heroku5.png"/>
+
 ## Credits 
 
  ### winning arrangments and cheching for winnning
