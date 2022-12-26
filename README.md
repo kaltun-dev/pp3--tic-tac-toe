@@ -1,54 +1,53 @@
 # Tic Tac Toe game
-*This is a tic tac toe game created for educational purposes.
-Code Institute portpholio project 3 
+    *This is a tic tac toe game created for educational purposes.
+    Code Institute portpholio project 3 
 
-<img src="assets/images/amiresponsive-tictactoe.png"/>
+    <img src="assets/images/amiresponsive-tictactoe.png"/>
 
-Tic Tac Toe is an age old game that is played around the world. it can be playen on a game board, a paper and pen board, in a sand and rocks board and online in the computer. It is played by two people at a time. One player takes O and another X. The players take turn by turn to mark the space in the 3×3 grid. If the current player marks three of their marks diagonally, horizontally and vertically in a row or a column that player is declared the winner.
-<br>
-The deployed website can be viewed here. [Tic Tac Toe](https://tictactoepp3.herokuapp.com/).
+    Tic Tac Toe is an age old game that is played around the world. it can be playen on a game board, a paper and pen board, in a sand and rocks board and online in the computer. It is played by two people at a time. One player takes O and another X. The players take turn by turn to mark the space in the 3×3 grid. If the current player marks three of their marks diagonally, horizontally and vertically in a row or a column that player is declared the winner.
+    <br>
+    The deployed website can be viewed here. [Tic Tac Toe](https://tictactoepp3.herokuapp.com/).
 
 # Table of contents
-- [Tic Tac Toe game](#Tic-Tac-Toe-game)
-- [Table of contents](#Table-of-contents)
-- [Project Goals](#Project-Goals)
-- [Flowchart](#Flowchart)
-- [Technologies](#Technologies)
-- [Existing features](#Existing-Features)
-- [future features](#Future-Features)
-- [Testing](#Testing)
-- [Bugs and solutions](#Project-Bugs-and-Solutions)
-- [deployment](#Deployment)
-- [credits](#Credits)
-
+    - [Tic Tac Toe game](#Tic-Tac-Toe-game)
+    - [Table of contents](#Table-of-contents)
+    - [Project Goals](#Project-Goals)
+    - [Flowchart](#Flowchart)
+    - [Technologies](#Technologies)
+    - [Existing features](#Existing-Features)
+    - [future features](#Future-Features)
+    - [Testing](#Testing)
+    - [Bugs and solutions](#Project-Bugs-and-Solutions)
+    - [deployment](#Deployment)
+    - [credits](#Credits)
 
 ## Project Goals
-### User Goals
 
-- user wants to Know the rules of the game before they start playing
-- user wants to Play the traditional classic tic tac toe online at ease
-- user wants to be able to play reapetdily if they wanted to and to restart the game.
-- user wants to get notified if they won.
-- user wants to play a logical game that is error free.
-- user wants to know the various ways in which they can win the game.
+ ### User Goals
+    - user wants to Know the rules of the game before they start playing
+    - user wants to Play the traditional classic tic tac toe online at ease
+    - user wants to be able to play reapetdily if they wanted to and to restart the game.
+    - user wants to get notified if they won.
+    - user wants to play a logical game that is error free.
+    - user wants to know the various ways in which they can win the game.
 
-### Owner Goals
-- owner wants to create a game that is fun and and engaging to play
-- owner wants a lot of users to visit page
-- owner wants users to understand the rules of tic tac toe before users play
-- owner wants users to be aware of the diffrent ways they can win.
-- owner wants users to know the diffrent spots/marks and the numbers that conside with them
-- owner wants users to know when they entered an invalid input 
-- owner wants users to know that game cant continue unless correct input is entered
-- owner wants users to play the game, have fun and share the game with family and friends
+ ### Owner Goals
+    - owner wants to create a game that is fun and and engaging to play
+    - owner wants a lot of users to visit page
+    - owner wants users to understand the rules of tic tac toe before users play
+    - owner wants users to be aware of the diffrent ways they can win.
+    - owner wants users to know the diffrent spots/marks and the numbers that conside with them
+    - owner wants users to know when they entered an invalid input 
+    - owner wants users to know that game cant continue unless correct input is entered
+    - owner wants users to play the game, have fun and share the game with family and friends
 
- ## Flowchart
- <img src="assets/images/tictactoe-flowchart.jpg"/>
+## Flowchart
+  <img src="assets/images/tictactoe-flowchart.jpg"/>
  
 ## Technologies
 
-### Programing languages
-* Python
+ ### Programing languages
+ * Python
 
  ### The technologies and tools
  * Heroku for deploying and hosting. [see here](https://heroku.com/)
@@ -62,9 +61,26 @@ The deployed website can be viewed here. [Tic Tac Toe](https://tictactoepp3.hero
 
 ## Existing Features 
 
+ #### Introduction to game
+  - As soon as the game is loaded or refreshed, the introduction to the game is shown. A welcome   message is shown as well as rules to the game. 
+  <img src="assets/images/game-welcome.png"/>
 
+ #### Game begins
+  - After the welcome introduction a prompt message is shown for user to enter name. The game cannot begin whithout entering the name. Thereafter the Tic Tac Toe game board is displayed for the player to see the positions and places. after which another prompt message apears for player input. player has to enter an imput coressponding to the position they want from 1 to 9. If anything other than 1 to 9 is selcted or if spot is taken than game wont continue. 
+ <img src="assets/images/game-begins.png"/>
 
-  
+ #### Game ends in tie
+  - game ends in a tie if none of the 8 winning arangments are alighned or match. In such occation the player recieves a notification that game is over and endded on tie. Player is then given 2 options; to play the game again or to end the game. 
+  <img src="assets/images/game-tie.png"/>
+
+ #### Game ends in either player winning 
+  - The game will continue with the 2 players taking turns untill any of the 8 winning arragments are matched horizentally, vertically or diagnaly. In such occation the player recieves a notification that game is over and they won or player "o" won. Player is then given 2 options; to play the game again or to end the game. 
+  <img src="assets/images/game-winner.png"/>
+ 
+ #### Play again or end the game
+  - In the end the player is given two options to end the game or to keep playing. if they choose to play again, the game loads again from the begining. If they however choose to quit then player gets a good by massege. 
+  <img src="assets/images/play-again.png"/>
+
 
 ## Testing
 
@@ -99,15 +115,13 @@ The deployed website can be viewed here. [Tic Tac Toe](https://tictactoepp3.hero
  
 ## Credits 
 
- ### Content
+ ### winning arrangments and cheching for winnning
 
+ ### handling input errors
+
+ ### ending the game
  
-
-
- ### Media
-
- 
- ### Work based in other code
+ ### printing board and checking for tie
 
  
  ### Acknowledgements
