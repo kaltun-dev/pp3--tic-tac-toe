@@ -1,10 +1,9 @@
 # Tic Tac Toe game
- *This is a tic tac toe game created for educational purposes.
- Code Institute portpholio project 3 
+ *This tic tac toe game was created for educational purposes only. For Code Institute's portfolio project 3.
 
  <img src="assets/images/amiresponsive-tictactoe.png"/>
 
- Tic Tac Toe is an age old game that is played around the world. it can be playen on a game board, a paper and pen board, in a sand and rocks board and online in the computer. It is played by two people at a time. One player takes O and another X. The players take turn by turn to mark the space in the 3×3 grid. If the current player marks three of their marks diagonally, horizontally and vertically in a row or a column that player is declared the winner.
+ Tic Tac Toe is an age old classic game that is played around the world in various versions. It can be playen on a game board, on a paper and pen board, on a sand and rocks board and online on the computer and phones. It is generally played by two people at a time. One player takes O sign and another X sign. The players take turn by turn to mark the space in a 3×3 grid. If the current player marks three of their marks diagonally, horizontally or vertically in a row or in a column, that player is declared the winner.
  <br>
  The deployed website can be viewed here. [Tic Tac Toe](https://tictactoepp3.herokuapp.com/).
 
@@ -26,7 +25,7 @@
  ### User Goals
  - user wants to Know the rules of the game before they start playing
  - user wants to Play the traditional classic tic tac toe online at ease
- - user wants to be able to play reapetdily if they wanted to and to restart the game.
+ - user wants to be able to play reapetdily if they wanted to and to be able to restart the game.
  - user wants to get notified if they won.
  - user wants to play a logical game that is error free.
  - user wants to know the various ways in which they can win the game.
@@ -35,8 +34,8 @@
  - owner wants to create a game that is fun and and engaging to play
  - owner wants a lot of users to visit page
  - owner wants users to understand the rules of tic tac toe before users play
- - owner wants users to be aware of the diffrent ways they can win.
- - owner wants users to know the diffrent spots/marks and the numbers that conside with them
+ - owner wants users to be aware of the different ways they can win.
+ - owner wants users to know the different spots/marks and the numbers that conside with them
  - owner wants users to know when they entered an invalid input 
  - owner wants users to know that game cant continue unless correct input is entered
  - owner wants users to play the game, have fun and share the game with family and friends
@@ -57,20 +56,20 @@
  * pep8 linter to check code for errors. [see here](https://pep8ci.herokuapp.com/) 
 
  ### Libraries
- * Random was used so that the computer can generate a random number.
+ * Random was used so that the computer can generate a random number each time.
 
 ## Existing Features 
 
  #### Introduction to game
-  - As soon as the game is loaded or refreshed, the introduction to the game is shown. A welcome   message is shown as well as rules to the game. 
+  - As soon as the game is loaded or refreshed, the introduction to the game is shown. A welcome   message is shown as well as the rules to the game. 
   <img src="assets/images/game-welcome.png"/>
 
  #### Game begins
-  - After the welcome introduction a prompt message is shown for user to enter name. The game cannot begin whithout entering the name. Thereafter the Tic Tac Toe game board is displayed for the player to see the positions and places. after which another prompt message apears for player input. player has to enter an imput coressponding to the position they want from 1 to 9. If anything other than 1 to 9 is selcted or if spot is taken than game wont continue. 
+  - After the welcome introduction a prompt message is shown for user to enter name. The game cannot begin whithout entering the name. Thereafter the Tic Tac Toe game board is displayed for the player to see the positions and places. After which another prompt message apears for player input. player has to enter an input coressponding to the position they want from 1 to 9. If anything other than 1 to 9 is selcted or if spot is taken, the game won't continue. 
  <img src="assets/images/game-begins.png"/>
 
  #### Game ends in tie
-  - game ends in a tie if none of the 8 winning arangments are alighned or match. In such occation the player recieves a notification that game is over and endded on tie. Player is then given 2 options; to play the game again or to end the game. 
+  - game ends in a tie if none of the 8 winning arangments are alighned or match. In such occation the player recieves a notification that game is over and ends on a tie. Player is then given 2 options; to play the game again or to end the game. 
   <img src="assets/images/game-tie.png"/>
 
  #### Game ends in either player winning 
@@ -78,25 +77,22 @@
   <img src="assets/images/game-winner.png"/>
  
  #### Play again or end the game
-  - In the end the player is given two options to end the game or to keep playing. if they choose to play again, the game loads again from the begining. If they however choose to quit then player gets a good by massege. 
+  - In the end the player is given two options; to end the game or to keep playing. If they choose to play again, the game loads again from the begining. If they however choose to quit then the player gets a goodby massege. 
   <img src="assets/images/play-again.png"/>
 
 ## Testing
 
  ### Manual Testing
-  #### internal linter
-   - Used internal pep8 linter
-   * After hearing that pep8 online website was down, i followed the sterps for installing the internal pep8 linter for CI. At first there were so many errors, mainly to do with commenting spaces, whitespace, line too long, blank lines amongst others.
+  #### Internal pep8 linter
+   * After hearing that pep8 online website was down, i followed the steps for installing the internal pep8 linter for CI. At first there were so many errors, mainly to do with commenting spaces, whitespace, line too long, blank lines amongst others.
   <img src="assets/images/internalpep8-linter.png"/>
 
-  #### Before pep8 linter
-  - used Code Institute pep8 linter
+  ####  Code Institute pep8 linter - BEFORE
   * After i got news that Code Institute made a new pep8 linter, i used it to check and correct any further errors. 
   <img src="assets/images/before-pep8.png"/>
 
-  #### Final pep8 linter
-  - After corrections
-  * In the end there was one final error on line 194. Which states that comparison to True should be if cond is true. I have tried diffrent ways of correcting this line. And used an if condition but unfortunaly game flow doesnt continue. So for that reason I have decided to leave this error as i believe that a (while loop) is suitable here and keep the game in a loop. Am sure there are ways this can be solved but unfortunatly there is not enough time for it now. It is also worth noting that this error does not effect the game in any negative way. 
+  #### Code Institute pep8 linter - AFTER corrections
+  * In the end there was one final error on line 194. Which states that "comparison to True should be if cond is true". I have tried different ways of correcting this line. And used an if condition but unfortunaly game flow doesn't continue. So for that reason I have decided to leave this error as i believe that a (while loop) is suitable here and keeps the game in a loop. Am sure there are other ways this could be solved but unfortunatly there is not enough time for it now. It is also worth noting that this error does not effect the game in any negative way. 
   <img src="assets/images/last-pep8.png"/>
   
 
@@ -104,7 +100,7 @@
   * Add colours and style to make game engaging
   * style game in a way that doesnt need a number input but rather a screen click
   * give player a choice of being player o or player x
-  * keep score of the game. This was very easy to implement but saw no big benfit as players will most likly refresh the game.   
+  * keep score of the game. This was very easy to implement but saw no big benfit to it, as players will most likly refresh the game.   
   * make the numbers the computer generates randomly be more intuitive and smarter so game can be more engaging.
 
 ## Project Bugs and Solutions:
@@ -119,12 +115,12 @@
  3.  Tried using player input outside varible. but coudnt.
  - solution:  found solution from stackoverflow to redefine the varible using global.
 
- 4.  when played, game was not folllowing through logic. like announced if player o won. or anounces if tie and end game. 
+ 4.  when played, game was not following through logic. For instance to announce if player o won. or anounces if tie and end game. 
  - tried several solutions. fixed with help from tutors by trying to re- Arrange the (main) function loop.
  <img src="assets/images/error1.png"/>
 
- 5. when press 2 to quit game, game was not quiting, tried making a function called quit all that sets gameplaying to false. unfortunaly that didnt help at all. 
- - i tried so many solutions and playd arround with code stubburly for hours. In the end i googled and found the solution was so simple all along. a build in function called quit() can be used or another called exit() amongst other solutions. i was gobsmacked but super happy
+ 5. when press option 2 to quit game, game was not quiting, tried making a function called quit all that sets gameplaying to false. Unfortunaly that didnt help at all. 
+ - i tried so many solutions and played arround with code stubbornly for hours. In the end i googled and found the solution was so simple all along. A build in function called quit() can be used or another called exit() amongst other solutions. I was gobsmacked but super happy
  <img src="assets/images/error-input.png"/>
 
  6. check tie wasnt working and was ending the game after tie straight away. 
@@ -142,11 +138,11 @@
  ### Heroku
  1. Login to heroku and click new app. Enter app name, try another name if name is taken. Make sure to tick the correct region.
  <img src="assets/images/heroku1.png"/>
- 2. After app is created, go to setting from dashboard.
+ 2. After app is created, go to setting from the dashboard.
  <img src="assets/images/heroku2.png"/>
- 3. In the setting enter convic vars, as i had no json files to hide, i used port and 8000 keys as recomended by code institute. Also add buildbacks python and nodejs in that order.
+ 3. In the setting enter convig vars, as i had no json files to hide, i used port keys and 8000 as recomended by code institute. Also add buildbacks python and nodejs in that order.
  <img src="assets/images/heroku3.png"/>
- 4. After go to deploy and use github deployment method. log in to git hub via heroku.
+ 4. After go to deploy and use github deployment method. log in to github via heroku.
  <img src="assets/images/heroku4.png"/>
  5. Choose manual deployment and enable automatic deployment from main branch
  <img src="assets/images/heroku5.png"/>
@@ -154,11 +150,11 @@
 ## Credits 
 
 ### printing board and checking for tie
-  * I used this toturial to understand general concept and flow of the game as well as how to print game board, how to check for tie and how to print user input on the board.
+  * I used this toturial to understand the general concept and flow of the game as well as how to print game board, how to check for tie and how to print user input on the board.
   [see here](https://www.youtube.com/watch?v=dK6gJw4-NCo&t=23s)
 
  ### winning arrangments and checking for winnning
- * i used this website to understand the logic of the game and the winning arangements;
+ * I used this website to understand the logic of the game and the different winning arangements;
  [see here](https://geekflare.com/tic-tac-toe-python-code/)
  <img src="assets/images/winning-arrangment.png"/>
 
