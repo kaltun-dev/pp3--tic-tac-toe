@@ -131,6 +131,10 @@
  shoud've been "x". 
  - solution: fixed this persistant error by re defining current player on both main function and play again or not function and setting current player to "x".
 
+ ### Un-fixed errors
+ * As mentioned above in the end there was one final error on line 194. Which states that "comparison to True should be if cond is true". I have tried different ways of correcting this line. And used an if condition but unfortunaly game flow doesn't continue. So for that reason I have decided to leave this error as i believe that a (while loop) is suitable here and keeps the game in a loop. Am sure there are other ways this could be solved but unfortunatly there is not enough time for it now. It is also worth noting that this error does not effect the game in any negative way. 
+  <img src="assets/images/last-pep8.png"/>
+
 
 
 ## Deployment
