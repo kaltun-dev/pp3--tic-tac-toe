@@ -12,7 +12,8 @@ xScore = 0
 oScore = 0
 
 
-def intro():  # introduction to game
+# introduction to game
+def intro():
     print()
     print("WELCOME TO TIC TAC TOE")
     print()
